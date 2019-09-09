@@ -6,12 +6,12 @@ from bs4 import BeautifulSoup
 
 from datetime import datetime
 
-from os import getenv
+from os import environ
 
 import kb
 
 
-bot = TeleBot(getenv('TOKEN'))
+bot = TeleBot(environ(TOKEN))
 
 
 bot.helpers = {
