@@ -24,7 +24,7 @@ bot.settings = {
 	'abuadel': False,
 	'saadi': False,
 	'ibnkasir': False
-} # Настройки отображения текста
+} # Настройки отображения текста аята
 
 
 @bot.message_handler(commands=['start'])
