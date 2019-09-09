@@ -22,7 +22,7 @@ bot.settings = {
 	'original': True,
 	'kuliev': True,
 	'abuadel': False,
-	'saadi': True,
+	'saadi': False,
 	'ibnkasir': False
 } # Настройки отображения текста
 
