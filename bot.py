@@ -11,7 +11,7 @@ from os import environ
 import kb
 
 
-bot = TeleBot(environ(TOKEN))
+bot = TeleBot(environ['TOKEN'])
 
 
 bot.helpers = {
