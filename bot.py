@@ -35,6 +35,8 @@ def start_message(message):
 @bot.message_handler(content_types=['text'])
 def send_text(message):
 	if helpers['ayat_waiting']: # Ищет нужный аят, в случае ошибки сообщает
+		helpers['ayat_waiting'] = False
+		
 		try:
 			sura = message.text.split(':')[0]
 			ayat = message.text.split(':')[1]
@@ -98,6 +100,8 @@ def send_text(message):
 		bot.send_message(message.chat.id, 'Расписание молитв на ' + msgdate)
 		bot.send_message(message.chat.id, 'Фаджр: '+p[1]+'\nВосход: '+p[2]+'\nЗухр: '+p[3]+'\nАср: '+p[4]+'\nМагриб: '+p[5]+'\nИша: '+p[6])
 
+		helpers['ayat_waiting'] = False
+
 
 	elif message.text.lower() == 'случайный аят': # Стягивает случайный номер аята, а затем и сам аят
 		random_ayat_r = get('http://ayatalquran.com/random')
@@ -134,6 +138,8 @@ def send_text(message):
 			ibnkasir = ayat_text_soup.find_all(class_='ayat')[9].get_text().strip()
 			bot.send_message(message.chat.id, 'Ибн Касир - толкование: \n' + ibnkasir)
 
+		helpers['ayat_waiting'] = False
+
 
 	elif message.text.lower() == 'настройки':
 		settings_status = 'Оригинальный текст: '
@@ -164,8 +170,7 @@ def send_text(message):
 
 		bot.send_message(message.chat.id, settings_status, reply_markup=kb.inkb1)
 
-
-	helpers['ayat_waiting'] = False
+		helpers['ayat_waiting'] = False
 
 
 @bot.callback_query_handler(func=lambda call: True)
