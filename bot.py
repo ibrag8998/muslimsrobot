@@ -34,7 +34,12 @@ def start_message(message):
 
 @bot.message_handler(content_types=['text'])
 def send_text(message):
-	if helpers['ayat_waiting']: # Ищет нужный аят, в случае ошибки сообщает
+	if message.text.lower() == 'аят':
+		bot.send_message(message.chat.id, 'Введите номер суры и аята. Пример: 2:255')
+		helpers['ayat_waiting'] = True
+
+
+	elif helpers['ayat_waiting']: # Ищет нужный аят, в случае ошибки сообщает
 		helpers['ayat_waiting'] = False
 		
 		try:
@@ -71,11 +76,6 @@ def send_text(message):
 
 		except:
 			bot.send_message(message.chat.id, 'Вы ввели номер некорректно или ввели номер несуществующего аята')
-
-
-	if message.text.lower() == 'аят':
-		bot.send_message(message.chat.id, 'Введите номер суры и аята. Пример: 2:255')
-		helpers['ayat_waiting'] = True
 
 
 	elif message.text.lower() == 'намаз': # Стягивает расписание намазов
