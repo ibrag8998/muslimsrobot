@@ -29,6 +29,7 @@ def qiyamul_layl(m, f):
 	if half[1] % 1 == 0.5:
 		half[1] -= 0.5
 
+	half = conv(half)
 
 	mid = [int(m[0]) + half[0], int(m[1]) + half[1]]
 
