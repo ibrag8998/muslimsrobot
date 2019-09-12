@@ -10,7 +10,10 @@ def conv(x): # if float - makes int;
 				x[i] = int(x[i])
 	return x
 
-def qiyamul_layl(m, f):
+def qiyamul_layl(x, y):
+	m = x
+	f = y
+	
 	f = str(int(f[0:2]) + 24) + f[2:] # Прибавляем 24 к часам фаджра, чтобы удобно было считать время между ним и магрибом
 
 	m = m.split(':') # Разбиваем время намазов на часы и минуты
