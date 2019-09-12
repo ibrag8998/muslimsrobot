@@ -96,6 +96,7 @@ def send_text(message):
 			5: prayer_shedule.split('<td>')[6][0:5],
 			6: prayer_shedule.split('<td>')[7][0:5]
 		}
+		bot.send_message(message.chat.id, p[1] + '\n' + p[5])
 
 
 		bot.send_message(message.chat.id, 'Расписание молитв на ' + msgdate)
