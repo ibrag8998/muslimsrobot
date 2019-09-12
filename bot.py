@@ -12,7 +12,8 @@ import kb
 import ql
 
 
-bot = TeleBot(environ['TOKEN'])
+# bot = TeleBot(environ['TOKEN'])
+bot = TeleBot('703794201:AAFx_7Gpim4bpWxqA-JyJD-aGuKy7FObWw4')
 
 
 helpers = {
