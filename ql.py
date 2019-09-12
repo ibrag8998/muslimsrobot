@@ -80,4 +80,4 @@ def qiyamul_layl(m, f):
 	last_third [0], last_third[1] = str(last_third[0]), str(last_third[1])
 	last_third = ':'.join(last_third)
 
-	return 'Полночь: ' + mid + '\nПоследня треть ночи: ' + last_third
+	return 'Полночь: ' + mid + '\nПоследняя треть ночи: ' + last_third
