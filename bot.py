@@ -101,7 +101,7 @@ def send_text(message):
 		bot.send_message(message.chat.id, 'Расписание молитв на ' + msgdate)
 		bot.send_message(message.chat.id, 'Фаджр: '+p[1]+'\nВосход: '+p[2]+'\nЗухр: '+p[3]+'\nАср: '+p[4]+'\nМагриб: '+p[5]+'\nИша: '+p[6])
 
-		bot.send_message(message.chat.id, ql.qiyamul_layl())
+		bot.send_message(message.chat.id, ql.qiyamul_layl(p[1], p[5]))
 
 		helpers['ayat_waiting'] = False
 
